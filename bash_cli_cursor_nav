@@ -1,0 +1,11 @@
+Ctrl + A: Move to the start of the command line.
+Ctrl + E: Move to the end of the command line.
+Ctrl + F: Move one character forward.
+Ctrl + B: Move one character backward.
+Alt + F or Esc + F: Move the cursor one word forward.
+Alt + B or Esc + B: Move the cursor one word backward.
+Ctrl + K: Delete everything from the cursor to the end of the line.
+Ctrl + U: Delete everything from the cursor to the beginning of the line.
+Ctrl + W: Remove the word before the cursor.
+Alt + D: Remove from the cursor until the end of the word.
+Alt + Backspace: Remove from the cursor until the start of the word.
