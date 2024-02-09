@@ -1,0 +1,18 @@
+gdb ./your_program			Start GDB with your program
+break file.cpp:line_number	Set a breakpoint at a line number
+break function_name			Set a breakpoint at a function
+run or r					Start the program
+next or n					Step over a line of code
+step or s					Step into a function
+finish						Step out of a function
+continue or c				Continue execution until the next breakpoint
+info breakpoints or br		List all breakpoints
+clear breakpoint_number		Clear a breakpoint
+delete breakpoint_number	Delete a breakpoint
+print variable_name or p variable_name	Print the value of a variable
+x/num_units format address	Examine memory (e.g., x/10xb &variable)
+info registers or i r		Display registers
+backtrace or bt				Show the backtrace
+set var variable_name = new_value	Change the value of a variable
+set *address = value		Modify memory
+quit or q					Quit GDB
