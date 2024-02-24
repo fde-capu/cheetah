@@ -1,0 +1,64 @@
+Phind
+
+scanf is a function in C programming used to read formatted input from the standard input (usually the keyboard). It's part of the C standard library and is defined in the stdio.h header file. The function reads data from the standard input stream (stdin) and stores them according to the parameter format into the locations pointed by the additional arguments.
+
+Here's a cheat sheet to help you remember how to use scanf effectively:
+
+Basic Syntax
+int scanf(const char *format, ...);
+format: A null-terminated character string that specifies how to interpret the input.
+...: Variables where the input will be stored.
+Return Value
+Returns the number of input items successfully matched and assigned, which can be fewer than provided for, or even zero in the event of an early matching failure.
+Format Specifiers
+%d or %i: Integer
+%f: Floating-point number
+%lf: Double precision floating-point number
+%c: Character
+%s: String of characters
+%u: Unsigned integer
+%x or %X: Hexadecimal integer
+%o: Octal integer
+%p: Pointer address
+%e or %E: Scientific notation (mantissa/exponent) using e
+%g or %G: Use the shorter of %f or %e/%E
+%a or %A: Hexadecimal floating-point, lowercase or uppercase
+%n: Nothing is expected; instead, the number of characters consumed thus far from the input is stored through the argument.
+Modifiers
+* (asterisk): Suppresses assignment.
+l (ell): Specifies that the argument is a long int or double.
+ll (double ell): Specifies that the argument is a long long int.
+h (short): Specifies that the argument is a short int.
+hh (double short): Specifies that the argument is a char.
+j (intmax_t): Specifies that the argument is an intmax_t.
+z (size_t): Specifies that the argument is a size_t.
+t (ptrdiff_t): Specifies that the argument is a ptrdiff_t.
+L (locale-specific): Specifies that the argument is a wint_t.
+Width Specification
+You can specify the maximum width of the input by using a number between the % and the format specifier. For example, %5d reads an integer of up to 5 digits.
+Example Usage
+#include <stdio.h>
+
+int main() {
+    int age;
+    float salary;
+    char name[50];
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Enter your salary: ");
+    scanf("%f", &salary);
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("You entered: Age = %d, Salary = %.2f, Name = %s\n", age, salary, name);
+
+    return  0;
+}
+Common Pitfalls
+Buffer Overflow: Always specify a width for %s to prevent reading more characters than the buffer can hold.
+Skipping Input: If scanf fails to read the expected input, it can leave the input stream in an inconsistent state. Use scanf(" %*[^\n]"); to clear the input buffer.
+Return Value: Always check the return value of scanf to ensure the expected number of inputs were successfully read.
+Remember, scanf is powerful but can be tricky to use correctly, especially with strings and floating-point numbers. Always validate and sanitize input in real-world applications.
